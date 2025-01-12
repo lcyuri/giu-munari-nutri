@@ -22,11 +22,9 @@ const About: React.FC = () => {
         threshold: [0, 1],
       }
     );
-
     if (contactRef.current) {
       observer.observe(contactRef.current);
     }
-
     return () => {
       if (contactRef.current) {
         observer.unobserve(contactRef.current);
@@ -60,7 +58,7 @@ const About: React.FC = () => {
       <Box
         sx={{
           flex: 1,
-          textAlign: 'center' 
+          textAlign: 'center'
         }}
       >
         <Typography
@@ -84,13 +82,16 @@ const About: React.FC = () => {
         >
           VAMOS CONVERSAR?
         </Typography>
-        <Box 
+        <Box
           sx={{
             opacity: opacity,
             transition: 'opacity 0.8s ease'
           }}
         >
           <Button
+            component='a'
+            href={`https://wa.me/+5551981860155?text=${encodeURIComponent('Olá Giu, gostaria de agendar uma consulta!')}`}
+            target='_blank'
             variant='outlined'
             startIcon={<FaWhatsapp />}
             sx={{
@@ -142,15 +143,17 @@ const About: React.FC = () => {
           }}
         >
           <Box
+            component='a'
+            href='https://instagram.com/giumunarinutri/'
+            target='_blank'
+            rel='noopener noreferrer'
             sx={{
-              display: 'flex', 
-              alignItems: 'center'
+              display: 'flex',
+              alignItems: 'center',
+              textDecoration: 'none'
             }}
           >
             <IconButton
-              href='https'
-              target='_blank'
-              rel='noopener noreferrer'
               sx={{
                 backgroundColor: '#E4405F',
                 color: 'white',
@@ -181,16 +184,17 @@ const About: React.FC = () => {
             </Typography>
           </Box>
           <Box
+            component='a'
+            href='https://www.tiktok.com/@@giumunarii'
+            target='_blank'
+            rel='noopener noreferrer'
             sx={{
               display: 'flex',
               alignItems: 'center',
-              justifyContent: 'center',
+              textDecoration: 'none'
             }}
           >
             <IconButton
-              href='https'
-              target='_blank'
-              rel='noopener noreferrer'
               sx={{
                 backgroundColor: '#000000',
                 color: 'white',

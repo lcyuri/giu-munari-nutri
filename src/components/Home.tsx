@@ -50,6 +50,9 @@ const Home: React.FC = () => {
         }}
       >
         <Button
+          component='a'
+          href={`https://wa.me/+5551981860155?text=${encodeURIComponent('Olá Giu, gostaria de agendar uma consulta!')}`}
+          target='_blank'
           variant='outlined'
           startIcon={<WhatsApp />}
           sx={{

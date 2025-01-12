@@ -82,16 +82,17 @@ const App: React.FC = () => {
             animation: showWhatsApp ? 'fadeIn 0.5s ease-in-out' : 'fadeOut 0.5s ease-in-out',
             '@media (max-width: 600px)': {
               bottom: 15,
-              right: 15, 
+              right: 15,
             },
             '@media (max-width: 400px)': {
               bottom: 10,
-              right: 10, 
+              right: 10,
             },
           }}
         >
           <IconButton
-            href='https'
+            component='a'
+            href={`https://wa.me/+5551981860155?text=${encodeURIComponent('Olá Giu, gostaria de agendar uma consulta!')}`}
             target='_blank'
             sx={{
               backgroundColor: '#62684e',
@@ -120,8 +121,8 @@ const App: React.FC = () => {
                 fontSize: {
                   xs: 22,
                   sm: 26,
-                  md: 30 
-                } 
+                  md: 30
+                }
               }}
             />
           </IconButton>
