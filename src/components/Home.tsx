@@ -27,7 +27,10 @@ const Home: React.FC = () => {
         backgroundImage: `url(${homeImage})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
-        backgroundAttachment: 'fixed',
+        backgroundAttachment: {
+          xs: 'scroll',
+          sm: 'fixed'
+        },
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',

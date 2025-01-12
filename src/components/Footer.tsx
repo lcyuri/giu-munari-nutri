@@ -34,7 +34,7 @@ const Footer: React.FC = () => {
           }}
         >
           <Typography variant='body2' color='inherit'>
-            © 2024 Giulia Munari. Todos os direitos reservados.
+            © 2025 Giulia Munari. Todos os direitos reservados.
           </Typography>
         </Box>
       </Container>
