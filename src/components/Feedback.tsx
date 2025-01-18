@@ -40,28 +40,14 @@ const Feedback: React.FC = () => {
     pauseOnHover: true,
     responsive: [
       {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 3,
-          infinite: true,
-          dots: true
-        }
-      },
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
-          initialSlide: 2
-        }
-      },
-      {
         breakpoint: 480,
         settings: {
-          slidesToShow: 1,
+          slidesToShow: 3,
           slidesToScroll: 1,
-          initialSlide: 0
+          initialSlide: 0,
+          vertical: true,
+          verticalSwiping: false,
+          arrows: false
         }
       }
     ]
@@ -113,11 +99,11 @@ const Feedback: React.FC = () => {
                 <Card
                   sx={{
                     backgroundColor: '#fff',
-                    height: '200px',
+                    height: '201px',
                     width: '100%',
                     maxWidth: '290px',
                     boxShadow: 0,
-                    borderRadius: '8px',
+                    borderRadius: '8px'
                   }}
                 >
                   <img

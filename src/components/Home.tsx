@@ -27,10 +27,7 @@ const Home: React.FC = () => {
         backgroundImage: `url(${homeImage})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
-        backgroundAttachment: {
-          xs: 'scroll',
-          sm: 'fixed'
-        },
+        backgroundAttachment: 'scroll',
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
@@ -43,18 +40,21 @@ const Home: React.FC = () => {
       <Box
         sx={{
           position: 'absolute',
-          bottom: '20px',
           display: 'flex',
           justifyContent: 'center',
           flexDirection: 'column',
           alignItems: 'center',
           opacity: opacity,
           transition: 'opacity 0.2s ease',
+          bottom: {
+            xs: '20vh',  // Tamanho relativo à altura da viewport
+            sm: '5vh'
+          }
         }}
       >
         <Button
           component='a'
-          href={`https://wa.me/+5551981860155?text=${encodeURIComponent('Olá Giu, gostaria de agendar uma consulta!')}`}
+          href={`https://wa.me/+5551996060155?text=${encodeURIComponent('Olá Giu, gostaria de agendar uma consulta!')}`}
           target='_blank'
           variant='outlined'
           startIcon={<WhatsApp />}
@@ -63,6 +63,7 @@ const Home: React.FC = () => {
             color: '#fff',
             borderColor: '#62684e',
             backgroundColor: '#62684e',
+            marginBottom: { xs: '400px', sm: '0' },
             fontSize: {
               xs: '0.9rem',
               sm: '1.1rem'

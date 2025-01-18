@@ -92,7 +92,7 @@ const App: React.FC = () => {
         >
           <IconButton
             component='a'
-            href={`https://wa.me/+5551981860155?text=${encodeURIComponent('Olá Giu, gostaria de agendar uma consulta!')}`}
+            href={`https://wa.me/+5551996060155?text=${encodeURIComponent('Olá Giu, gostaria de agendar uma consulta!')}`}
             target='_blank'
             sx={{
               backgroundColor: '#62684e',

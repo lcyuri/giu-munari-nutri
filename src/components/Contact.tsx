@@ -90,7 +90,7 @@ const About: React.FC = () => {
         >
           <Button
             component='a'
-            href={`https://wa.me/+5551981860155?text=${encodeURIComponent('Olá Giu, gostaria de agendar uma consulta!')}`}
+            href={`https://wa.me/+5551996060155?text=${encodeURIComponent('Olá Giu, gostaria de agendar uma consulta!')}`}
             target='_blank'
             variant='outlined'
             startIcon={<FaWhatsapp />}
@@ -114,116 +114,6 @@ const About: React.FC = () => {
           >
             CONVERSE COMIGO PELO WHATSAPP
           </Button>
-        </Box>
-      </Box>
-      <Box
-        sx={{
-          flex: 1,
-          display: 'flex',
-          alignItems: 'center',
-          flexDirection: 'column'
-        }}
-      >
-        <Typography
-          variant='body1'
-          sx={{
-            fontWeight: 'bold',
-            marginBottom: 2
-          }}
-        >
-          Me encontre também em:
-        </Typography>
-        <Box
-          sx={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            flexDirection: { sm: 'row' },
-            gap: 2
-          }}
-        >
-          <Box
-            component='a'
-            href='https://instagram.com/giumunarinutri/'
-            target='_blank'
-            rel='noopener noreferrer'
-            sx={{
-              display: 'flex',
-              alignItems: 'center',
-              textDecoration: 'none'
-            }}
-          >
-            <IconButton
-              sx={{
-                backgroundColor: '#E4405F',
-                color: 'white',
-                marginRight: '10px',
-                '&:hover': { backgroundColor: '#C13584' },
-                fontSize: {
-                  xs: '0.875rem',
-                  sm: '0.9rem',
-                  md: '1rem'
-                }
-              }}
-            >
-              <FaInstagram />
-            </IconButton>
-            <Typography
-              variant='subtitle1'
-              sx={{
-                fontWeight: 'bold',
-                color: '#E4405F',
-                fontSize: {
-                  xs: '0.875rem',
-                  sm: '0.9rem',
-                  md: '1rem'
-                }
-              }}
-            >
-              Instagram
-            </Typography>
-          </Box>
-          <Box
-            component='a'
-            href='https://www.tiktok.com/@@giumunarii'
-            target='_blank'
-            rel='noopener noreferrer'
-            sx={{
-              display: 'flex',
-              alignItems: 'center',
-              textDecoration: 'none'
-            }}
-          >
-            <IconButton
-              sx={{
-                backgroundColor: '#000000',
-                color: 'white',
-                marginRight: '10px',
-                '&:hover': { backgroundColor: '#333333' },
-                fontSize: {
-                  xs: '0.875rem',
-                  sm: '0.9rem',
-                  md: '1rem'
-                }
-              }}
-            >
-              <FaTiktok />
-            </IconButton>
-            <Typography
-              variant='subtitle1'
-              sx={{
-                fontWeight: 'bold',
-                color: '#000000',
-                fontSize: {
-                  xs: '0.875rem',
-                  sm: '0.9rem',
-                  md: '1rem'
-                }
-              }}
-            >
-              TikTok
-            </Typography>
-          </Box>
         </Box>
       </Box>
     </Container>
