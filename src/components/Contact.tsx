@@ -1,29 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Box, Button, Container, Typography } from '@mui/material';
 import { FaWhatsapp } from 'react-icons/fa';
+import { WHATS_APP_LINK } from '../constants/genericConstants';
 
-const About: React.FC = () => {
-  const [isVisible, setIsVisible] = useState(false);
+interface ContactProps {
+  isButtonVisible: boolean;
+}
 
-  const whatsAppLink = `https://wa.me/+5551996060155?text=${encodeURIComponent('Olá Giu, gostaria de agendar uma consulta!')}`;
-
-  const observerOptions = { threshold: [0, 1] };
-
-  const observerCallback: IntersectionObserverCallback = (entries) => {
-    entries.forEach(entry => {
-      if (entry.target.id === 'contact-container') setIsVisible(entry.isIntersecting);
-    });
-  };
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(observerCallback, observerOptions);
-
-    const sectionEl = document.getElementById('contact-container');
-    if (sectionEl) observer.observe(sectionEl);
-
-    return () => observer.disconnect();
-  }, []);
-
+const About: React.FC<ContactProps> = ({ isButtonVisible }) => {
   return (
     <Container
       id='contact-container'
@@ -43,10 +27,15 @@ const About: React.FC = () => {
         <Typography variant='h3' sx={{ fontSize: { xs: '1.5rem', sm: '2rem', md: '2.5rem' } }}>
           VAMOS CONVERSAR?
         </Typography>
-        <Box sx={{ opacity: isVisible ? 1 : 0, transition: 'opacity 0.8s ease' }}>
+        <Box
+          sx={{
+            opacity: isButtonVisible ? 1 : 0,
+            animation: isButtonVisible ? 'fadeIn 0.5s ease-in-out' : 'fadeOut 0.5s ease-in-out',
+          }}
+        >
           <Button
             component='a'
-            href={whatsAppLink}
+            href={WHATS_APP_LINK}
             target='_blank'
             variant='outlined'
             startIcon={<FaWhatsapp />}

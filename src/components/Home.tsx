@@ -1,26 +1,15 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Box, Button, Typography } from '@mui/material';
 import { ArrowDownward, WhatsApp } from '@mui/icons-material';
 import homeImage from '../assets/home-image.jpg';
 import '../App.css';
+import { WHATS_APP_LINK } from '../constants/genericConstants';
 
-const Home: React.FC = () => {
-  const [opacity, setOpacity] = useState(1);
+interface HomeProps {
+  isButtonVisible: boolean;
+}
 
-  const whatsAppLink = `https://wa.me/+5551996060155?text=${encodeURIComponent('Olá Giu, gostaria de agendar uma consulta!')}`;
-
-  const handleScroll = () => {
-    const scrollY = window.scrollY;
-    const maxScroll = 300;
-    const newOpacity = 1 - Math.min(scrollY / maxScroll, 1);
-    setOpacity(newOpacity);
-  };
-
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
+const Home: React.FC<HomeProps> = ({ isButtonVisible }) => {
   return (
     <Box
       sx={{
@@ -45,14 +34,14 @@ const Home: React.FC = () => {
           justifyContent: 'center',
           flexDirection: 'column',
           alignItems: 'center',
-          opacity: opacity,
-          transition: 'opacity 0.2s ease',
+          opacity: isButtonVisible ? 1 : 0,
+          animation: isButtonVisible ? 'fadeIn 0.5s ease-in-out' : 'fadeOut 0.5s ease-in-out',
           bottom: { xs: '20vh', sm: '5vh' }
         }}
       >
         <Button
           component='a'
-          href={whatsAppLink}
+          href={WHATS_APP_LINK}
           target='_blank'
           variant='outlined'
           startIcon={<WhatsApp />}

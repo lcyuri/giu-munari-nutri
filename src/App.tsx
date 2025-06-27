@@ -48,16 +48,22 @@ const App: React.FC = () => {
 
   return (
     <div className='app'>
-      <div id='home'><Home /></div>
+      <div id='home'>
+        <Home isButtonVisible={!showWhatsApp}/>
+      </div>
       <Feedback />
       <hr />
       <About />
       <hr />
       <Advantage />
       <hr />
-      <div id='contact'><Contact /></div>
-      <div id='footer'><Footer /></div>
-      <WhatsAppButton visible={showWhatsApp}/>
+      <div id='contact'>
+        <Contact isButtonVisible={!showWhatsApp} />
+      </div>
+      <div id='footer'>
+        <Footer />
+      </div>
+      <WhatsAppButton isButtonVisible={showWhatsApp}/>
     </div>
   );
 };
