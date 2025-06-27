@@ -7,17 +7,18 @@ import '../App.css';
 const Home: React.FC = () => {
   const [opacity, setOpacity] = useState(1);
 
+  const whatsAppLink = `https://wa.me/+5551996060155?text=${encodeURIComponent('Olá Giu, gostaria de agendar uma consulta!')}`;
+
+  const handleScroll = () => {
+    const scrollY = window.scrollY;
+    const maxScroll = 300;
+    const newOpacity = 1 - Math.min(scrollY / maxScroll, 1);
+    setOpacity(newOpacity);
+  };
+
   useEffect(() => {
-    const handleScroll = () => {
-      const scrollY = window.scrollY;
-      const maxScroll = 300;
-      const newOpacity = 1 - Math.min(scrollY / maxScroll, 1);
-      setOpacity(newOpacity);
-    };
     window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   return (
@@ -46,15 +47,12 @@ const Home: React.FC = () => {
           alignItems: 'center',
           opacity: opacity,
           transition: 'opacity 0.2s ease',
-          bottom: {
-            xs: '20vh',  // Tamanho relativo à altura da viewport
-            sm: '5vh'
-          }
+          bottom: { xs: '20vh', sm: '5vh' }
         }}
       >
         <Button
           component='a'
-          href={`https://wa.me/+5551996060155?text=${encodeURIComponent('Olá Giu, gostaria de agendar uma consulta!')}`}
+          href={whatsAppLink}
           target='_blank'
           variant='outlined'
           startIcon={<WhatsApp />}
@@ -64,14 +62,8 @@ const Home: React.FC = () => {
             borderColor: '#62684e',
             backgroundColor: '#62684e',
             marginBottom: { xs: '400px', sm: '0' },
-            fontSize: {
-              xs: '0.9rem',
-              sm: '1.1rem'
-            },
-            padding: {
-              xs: '10px 20px',
-              sm: '14px 28px'
-            },
+            fontSize: { xs: '0.9rem', sm: '1.1rem' },
+            padding: { xs: '10px 20px', sm: '14px 28px' },
             transition: 'all 0.8s ease-out',
             '&:hover': { transform: 'scale(1.05)' },
           }}
@@ -84,10 +76,7 @@ const Home: React.FC = () => {
             flexDirection: 'column',
             alignItems: 'center',
             cursor: 'pointer',
-            marginTop: {
-              xs: '15px',
-              sm: '30px'
-            }
+            marginTop: { xs: '15px', sm: '30px' }
           }}
         >
           <Typography
@@ -96,23 +85,12 @@ const Home: React.FC = () => {
               color: '#fff',
               fontWeight: 'bold',
               marginBottom: '15px',
-              fontSize: {
-                xs: '0.8rem',
-                sm: '1rem'
-              }
+              fontSize: { xs: '0.8rem', sm: '1rem' }
             }}
           >
             CONHEÇA MEU TRABALHO
           </Typography>
-          <ArrowDownward
-            sx={{
-              animation: 'bounce 1.5s infinite',
-              fontSize: {
-                xs: '1.5rem',
-                sm: '2rem'
-              }
-            }}
-          />
+          <ArrowDownward sx={{ animation: 'bounce 1.5s infinite', fontSize: { xs: '1.5rem', sm: '2rem' } }} />
         </Box>
       </Box>
     </Box>

@@ -9,54 +9,21 @@ const About: React.FC = () => {
         display: 'flex',
         alignItems: 'center',
         minHeight: '60vh',
-        padding: {
-          xs: '50px 20px',
-          sm: '60px 0',
-          md: '60px 0' 
-        },
-        flexDirection: {
-          xs: 'column',
-          sm: 'row'
-        },
-        gap: { 
-          xs: 0, 
-          sm: '30px',
-          md: '80px'
-        }
+        padding: { xs: '50px 20px', sm: '60px 0', md: '60px 0' },
+        flexDirection: { xs: 'column', sm: 'row' },
+        gap: { xs: 0, sm: '30px', md: '80px' }
       }}
     >
-      <Box
-        sx={{
-          flex: 1,
-          textAlign: 'center' 
-        }}
-      >
-        <Typography
-          variant='h3'
-          sx={{
-            marginBottom: 4,
-            fontSize: {
-              xs: '1.5rem',
-              sm: '2rem',
-              md: '2.5rem'
-            },
-          }}
-        >
+      <Box sx={{ flex: 1, textAlign: 'center' }}>
+        <Typography variant='h3' sx={{ marginBottom: 4, fontSize: { xs: '1.5rem', sm: '2rem', md: '2.5rem' } }}>
           SOBRE MIM
         </Typography>
         <Typography
           variant='body1'
           sx={{
             textAlign: 'justify',
-            lineHeight: {
-              xs: '1.5',
-              sm: '2',
-              md: '2.5'
-            },
-            fontSize: {
-              xs: '0.875rem',
-              sm: '1rem'
-            }
+            lineHeight: { xs: '1.5', sm: '2', md: '2.5' },
+            fontSize: { xs: '0.875rem', sm: '1rem' }
           }}
         >
           Eu sou <strong>Giulia Munari</strong>, nutricionista, pós-graduanda em <strong>Nutrição Clínica, Nutrição Esportiva e Exames Laboratoriais</strong>, mas minha primeira formação foi em odontologia.
@@ -79,10 +46,7 @@ const About: React.FC = () => {
           backgroundPosition: 'center',
           borderRadius: '8px',
           flex: 1,
-          marginTop: {
-            xs: 3,
-            sm: 0
-          }
+          marginTop: { xs: 3, sm: 0 }
         }}
       />
     </Container>

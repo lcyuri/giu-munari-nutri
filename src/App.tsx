@@ -5,8 +5,7 @@ import Advantage from './components/Advantage';
 import Feedback from './components/Feedback';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
-import { Box, IconButton } from '@mui/material';
-import WhatsAppIcon from '@mui/icons-material/WhatsApp';
+import WhatsAppButton from './components/WhatsAppButton';
 
 const App: React.FC = () => {
   const [showWhatsApp, setShowWhatsApp] = useState(true);
@@ -14,29 +13,29 @@ const App: React.FC = () => {
   const [isContactVisible, setIsContactVisible] = useState(false);
   const [isFooterVisible, setIsFooterVisible] = useState(false);
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.target.id === 'home') {
-          setIsHomeVisible(entry.isIntersecting);
-        }
-        if (entry.target.id === 'contact') {
-          setIsContactVisible(entry.isIntersecting);
-        }
-        if (entry.target.id === 'footer') {
-          setIsFooterVisible(entry.isIntersecting);
-        }
-      });
-    }, {
-      root: null,
-      threshold: 0.7,
+  const observerOptions = { root: null, threshold: 0.7 };
+
+  const observerCallback: IntersectionObserverCallback = (entries) => {
+    entries.forEach(entry => {
+      if (entry.target.id === 'home') setIsHomeVisible(entry.isIntersecting);
+      if (entry.target.id === 'contact') setIsContactVisible(entry.isIntersecting);
+      if (entry.target.id === 'footer') setIsFooterVisible(entry.isIntersecting);
     });
-    observer.observe(document.getElementById('home')!);
-    observer.observe(document.getElementById('contact')!);
-    observer.observe(document.getElementById('footer')!);
-    return () => {
-      observer.disconnect();
-    };
+  };
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+    const homeEl = document.getElementById('home');
+    if (homeEl) observer.observe(homeEl);
+
+    const contactEl = document.getElementById('contact');
+    if (contactEl) observer.observe(contactEl);
+
+    const footerEl = document.getElementById('footer');
+    if (footerEl) observer.observe(footerEl);
+
+    return () => observer.disconnect();
   }, []);
 
   useEffect(() => {
@@ -49,85 +48,16 @@ const App: React.FC = () => {
 
   return (
     <div className='app'>
-      <div id='home'>
-        <Home />
-      </div>
-      <div>
-        <Feedback />
-      </div>
+      <div id='home'><Home /></div>
+      <Feedback />
       <hr />
-      <div>
-        <About />
-      </div>
+      <About />
       <hr />
-      <div>
-        <Advantage />
-      </div>
+      <Advantage />
       <hr />
-      <div id='contact'>
-        <Contact />
-      </div>
-      <div id='footer'>
-        <Footer />
-      </div>
-      {showWhatsApp && (
-        <Box
-          sx={{
-            position: 'fixed',
-            bottom: 20,
-            right: 20,
-            zIndex: 9999,
-            opacity: showWhatsApp ? 1 : 0,
-            transition: 'opacity 0.5s ease',
-            animation: showWhatsApp ? 'fadeIn 0.5s ease-in-out' : 'fadeOut 0.5s ease-in-out',
-            '@media (max-width: 600px)': {
-              bottom: 15,
-              right: 15,
-            },
-            '@media (max-width: 400px)': {
-              bottom: 10,
-              right: 10,
-            },
-          }}
-        >
-          <IconButton
-            component='a'
-            href={`https://wa.me/+5551996060155?text=${encodeURIComponent('Olá Giu, gostaria de agendar uma consulta!')}`}
-            target='_blank'
-            sx={{
-              backgroundColor: '#62684e',
-              transition: 'all 0.8s ease-out',
-              boxShadow: 3,
-              '&:hover': {
-                transform: 'scale(1.05)',
-                borderColor: '#62684e',
-                backgroundColor: '#62684e',
-              },
-              width: {
-                xs: '50px',
-                sm: '55px',
-                md: '65px',
-              },
-              height: {
-                xs: '50px',
-                sm: '55px',
-                md: '65px'
-              },
-            }}
-          >
-            <WhatsAppIcon
-              sx={{
-                color: 'white',
-                fontSize: {
-                  xs: 22,
-                  sm: 26,
-                  md: 30
-                }
-              }}
-            />
-          </IconButton>
-        </Box>
-      )}
+      <div id='contact'><Contact /></div>
+      <div id='footer'><Footer /></div>
+      <WhatsAppButton visible={showWhatsApp}/>
     </div>
   );
 };

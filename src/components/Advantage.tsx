@@ -33,50 +33,27 @@ const Advantage: React.FC = () => {
         justifyContent: 'center',
         alignItems: 'center',
         minHeight: '40vh',
-        padding: {
-          xs: '50px 20px',
-          sm: '60px 0',
-          md: '60px 0' 
-        }
+        padding: { xs: '50px 20px', sm: '60px 0', md: '60px 0' }
       }}
     >
       <div>
-        <Typography
-          sx={{
-            textAlign: 'center',
-            marginBottom: 4,
-            fontSize: {
-              xs: '1.5rem',
-              sm: '2rem',
-              md: '2.5rem' 
-            },
-          }}
-        >
+        <Typography sx={{ textAlign: 'center', marginBottom: 4, fontSize: { xs: '1.5rem', sm: '2rem', md: '2.5rem' }}}>
           QUAL É O DIFERENCIAL DA MINHA CONSULTORIA?
         </Typography>
         <Grid
           container
           spacing={4}
-          sx={{
-            justifyContent: 'center',
-            flexWrap: 'wrap'
-          }}
+          sx={{ justifyContent: 'center', flexWrap: 'wrap' }}
         >
           {cardsContent.map((card: any, index: number) => (
-            <Grid
-              item
-              xs={12}
-              sm={6}
-              md={3}
-              key={index}
-            >
+            <Grid key={index} item xs={12} sm={6} md={3}>
               <Card
                 sx={{
                   backgroundColor: '#62684e',
                   boxShadow: 20,
                   borderRadius: '8px',
                   color: '#F6F1E5',
-                  height: '100%',
+                  height: '100%'
                 }}
               >
                 <CardContent
@@ -85,28 +62,14 @@ const Advantage: React.FC = () => {
                     flexDirection: 'column',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    padding: '16px',
+                    padding: '16px'
                   }}
                 >
-                  <Box sx={{ marginBottom: '16px' }}>
-                    {card.icon}
-                  </Box>
-                  <Typography
-                    variant='h6'
-                    gutterBottom
-                    sx={{
-                      fontWeight: 'bold',
-                      fontSize: '1rem',
-                      marginBottom: '16px',
-                    }}
-                  >
+                  <Box sx={{ marginBottom: '16px' }}>{card.icon}</Box>
+                  <Typography variant='h6' gutterBottom sx={{ fontWeight: 'bold', fontSize: '1rem', marginBottom: '16px' }}>
                     {card.title}
                   </Typography>
-                  <Typography
-                    variant='body2'
-                    align='center'
-                    sx={{ fontSize: '0.875rem' }}
-                  >
+                  <Typography variant='body2' align='center' sx={{ fontSize: '0.875rem' }}>
                     {card.content}
                   </Typography>
                 </CardContent>

@@ -4,35 +4,12 @@ import logoImage from '../assets/logo-image.jpg';
 
 const Footer: React.FC = () => {
   return (
-    <Box
-      component='footer'
-      sx={{
-        backgroundColor: '#fff',
-        py: 2,
-        mt: 'auto'
-      }}
-    >
+    <Box sx={{ backgroundColor: '#fff', py: 2, mt: 'auto' }}>
       <Container>
-        <Box
-          sx={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center'
-          }}
-        >
-          <img
-            src={logoImage}
-            style={{ width: '150px' }}
-          />
+        <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+          <img src={logoImage} style={{ width: '150px' }} />
         </Box>
-        <Box
-          sx={{
-            textAlign: 'center',
-            mt: 2,
-            borderTop: '1px solid #dcdcdc',
-            pt: 1
-          }}
-        >
+        <Box sx={{ textAlign: 'center', mt: 2, borderTop: '1px solid #dcdcdc', pt: 1 }}>
           <Typography variant='body2' color='inherit'>
             © 2025 Giulia Munari. Todos os direitos reservados.
           </Typography>
