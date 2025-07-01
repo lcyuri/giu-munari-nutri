@@ -6,6 +6,10 @@ import Feedback from './components/Feedback';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import WhatsAppButton from './components/WhatsAppButton';
+import { createTheme, responsiveFontSizes, ThemeProvider } from '@mui/material/styles';
+
+let theme = createTheme();
+theme = responsiveFontSizes(theme);
 
 const App: React.FC = () => {
   const [showWhatsApp, setShowWhatsApp] = useState(true);
@@ -47,24 +51,27 @@ const App: React.FC = () => {
   }, [isHomeVisible, isContactVisible, isFooterVisible]);
 
   return (
-    <div className='app'>
-      <div id='home'>
-        <Home isButtonVisible={!showWhatsApp}/>
+    <ThemeProvider theme={theme}>
+      <div className='app'>
+        <div id='home'>
+          <Home isButtonVisible={!showWhatsApp} />
+        </div>
+        <Feedback />
+        <hr />
+        <About />
+        <hr />
+        <Advantage />
+        <hr />
+        <div id='contact'>
+          <Contact isButtonVisible={!showWhatsApp} />
+        </div>
+        <div id='footer'>
+          <Footer />
+        </div>
+        <WhatsAppButton isButtonVisible={showWhatsApp} />
       </div>
-      <Feedback />
-      <hr />
-      <About />
-      <hr />
-      <Advantage />
-      <hr />
-      <div id='contact'>
-        <Contact isButtonVisible={!showWhatsApp} />
-      </div>
-      <div id='footer'>
-        <Footer />
-      </div>
-      <WhatsAppButton isButtonVisible={showWhatsApp}/>
-    </div>
+    </ThemeProvider>
+
   );
 };
 

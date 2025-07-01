@@ -1,8 +1,9 @@
 import React from 'react';
 import Slider from 'react-slick';
-import { Container, Card, Typography, Box } from '@mui/material';
+import { Card, Typography, Box, Grid2, CardMedia } from '@mui/material';
+import { FEEDBACK_SETTINGS } from '../constants/genericConstants';
 
-const imageNames = [
+const images = [
   'feedback-image-1.png',
   'feedback-image-2.png',
   'feedback-image-3.png',
@@ -14,83 +15,66 @@ const imageNames = [
   'feedback-image-15.png',
   'feedback-image-17.png',
   'feedback-image-18.png',
-];
-
-const images = imageNames.map(name => require(`../assets/feedbacks/${name}`));
+].map(name => require(`../assets/feedbacks/${name}`));
 
 const Feedback: React.FC = () => {
-  const settings = {
-    dots: false,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 4,
-    slidesToScroll: 1,
-    initialSlide: 0,
-    autoplay: true,
-    autoplaySpeed: 3000,
-    pauseOnHover: true,
-    responsive: [{
-      breakpoint: 480,
-      settings: {
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        initialSlide: 0,
-        vertical: true,
-        verticalSwiping: false,
-        arrows: false
-      }
-    }]
-  };
-
   return (
-    <Container
+    <Grid2
+      container
+      direction='column'
+      alignItems='center'
+      justifyContent='center'
+      minHeight='40vh'
       sx={{
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        minHeight: '40vh',
-        padding: { xs: '50px 20px', sm: '60px 0', md: '60px 0' }
+        padding: {
+          xs: '50px 20px',
+          sm: '60px 0',
+          md: '60px 0',
+          lg: '60px 0',
+          xl: '60px 0'
+        }
       }}
     >
-      <div>
-        <Typography variant='h3' sx={{ textAlign: 'center', marginBottom: 4, fontSize: { xs: '1.5rem', sm: '2rem', md: '2.5rem' }}}>
-          FEEDBACKS
-        </Typography>
-        <Box
-          sx={{
-            width: '100%',
-            margin: '0 auto',
-            maxWidth: { xs: '300px', sm: '400px', md: '1250px' }
-          }}
-        >
-          <Slider {...settings}>
-            {images.map((image: string, index: number) => (
-              <div key={index}>
-                <Card
-                  sx={{
-                    backgroundColor: '#fff',
-                    height: '201px',
-                    width: '100%',
-                    maxWidth: '290px',
-                    boxShadow: 0,
-                    borderRadius: '8px'
-                  }}
-                >
-                  <img
-                    src={image}
-                    alt={`Feedback ${index + 1}`}
-                    style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-                  />
-                </Card>
-              </div>
-            ))}
-          </Slider>
-        </Box>
-      </div>
-    </Container>
+      <Typography variant='h4' align='center' gutterBottom>
+        FEEDBACKS
+      </Typography>
+      <Box
+        sx={{
+          width: {
+            xs: '90%',
+            sm: '80%',
+            md: '80%',
+            lg: '80%',
+            xl: '60%'
+          }
+        }}
+      >
+        <Slider {...FEEDBACK_SETTINGS}>
+          {images.map((image, index) => (
+            <Card
+              key={index}
+              sx={{
+                maxWidth: {
+                  xs: '100%',
+                  sm: '95%',
+                  md: '95%',
+                  lg: '95%',
+                  xl: '95%'
+                }
+              }}
+            >
+              <CardMedia
+                component='img'
+                image={image}
+                alt={`Feedback ${index + 1}`}
+                sx={{ aspectRatio: '4 / 3' }}
+              />
+            </Card>
+          ))}
+        </Slider>
+      </Box>
+    </Grid2>
   );
 };
 
 export default Feedback;
-
-
