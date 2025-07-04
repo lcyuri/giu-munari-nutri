@@ -1,42 +1,78 @@
 import React from 'react';
-import { Box, IconButton } from '@mui/material';
+import { Box, IconButton, Button, useTheme, useMediaQuery } from '@mui/material';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import { WHATS_APP_LINK } from '../constants/genericConstants';
 
 interface WhatsAppButtonProps {
-  isButtonVisible: boolean;
+  isButtonVisible?: boolean;
+  variant: 'floating' | 'full';
 }
 
-const WhatsAppButton: React.FC<WhatsAppButtonProps> = ({ isButtonVisible }) => {
-  return (
-    <Box
-      sx={{
-        position: 'fixed',
-        bottom: 20,
-        right: 20,
-        zIndex: 9999,
-        opacity: isButtonVisible ? 1 : 0,
-        animation: isButtonVisible ? 'fadeIn 0.5s ease-in-out' : 'fadeOut 0.5s ease-in-out',
-        '@media (max-width: 600px)': { bottom: 15, right: 15 },
-        '@media (max-width: 400px)': { bottom: 10, right: 10 },
-      }}
-    >
-      <IconButton
-        component='a'
-        href={WHATS_APP_LINK}
-        target='_blank'
+const WhatsAppButton: React.FC<WhatsAppButtonProps> = ({ isButtonVisible, variant }) => {
+  const theme = useTheme();
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
+
+  if (variant === 'floating') {
+    return (
+      <Box
         sx={{
-          backgroundColor: '#62684e',
-          transition: 'all 0.8s ease-out',
-          boxShadow: 3,
-          '&:hover': { transform: 'scale(1.05)', borderColor: '#62684e', backgroundColor: '#62684e' },
-          width: { xs: '50px', sm: '55px', md: '65px' },
-          height: { xs: '50px', sm: '55px', md: '65px' },
+          position: 'fixed',
+          bottom: 20,
+          right: 20,
+          zIndex: 9999,
+          opacity: isButtonVisible ? 1 : 0,
+          animation: isButtonVisible ? 'fadeIn 0.5s ease-in-out' : 'fadeOut 0.5s ease-in-out',
+          '@media (max-width: 600px)': {
+            bottom: 15,
+            right: 15
+          },
+          '@media (max-width: 400px)': {
+            bottom: 10,
+            right: 10
+          }
         }}
       >
-        <WhatsAppIcon sx={{ color: 'white', fontSize: { xs: 22, sm: 26, md: 30 } }} />
-      </IconButton>
-    </Box>
+        <IconButton href={WHATS_APP_LINK} target='_blank' size='large'>
+          <WhatsAppIcon
+            sx={{
+              fontSize: {
+                xs: "24px",
+                sm: "30px",
+                md: "34px",
+                lg: "34px",
+                xl: "34px"
+              }
+            }}
+          />
+        </IconButton>
+      </Box>
+    );
+  }
+
+  return (
+    <Button
+      href={WHATS_APP_LINK}
+      target='_blank'
+      variant='outlined'
+      startIcon={<WhatsAppIcon />}
+      size={isSmallScreen ? 'medium' : 'large'}
+      sx={{
+        border: 0,
+        borderRadius: '8px',
+        fontWeight: 'bold',
+        opacity: isButtonVisible ? 1 : 0,
+        animation: isButtonVisible ? 'fadeIn 0.5s ease-in-out' : 'fadeOut 0.5s ease-in-out',
+        height: {
+          xs: "40px",
+          sm: "44px",
+          md: "48px",
+          lg: "48px",
+          xl: "48px"
+        }
+      }}
+    >
+      CONVERSE COMIGO PELO WHATSAPP
+    </Button>
   );
 };
 

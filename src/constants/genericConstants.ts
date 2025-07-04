@@ -42,3 +42,16 @@ export const FEEDBACK_SETTINGS = {
   ],
 };
 
+export const BUTTON_STYLE_SETTINGS = {
+  styleOverrides: {
+    root: {
+      backgroundColor: '#8d9773',
+      color: '#fff',
+      transition: 'background 0.3s',
+      '&:hover': {
+        backgroundColor: '#62684e'
+      }
+    }
+  }
+}
+

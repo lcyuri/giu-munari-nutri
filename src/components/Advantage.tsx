@@ -96,7 +96,7 @@ const Advantage: React.FC = () => {
                 >
                   <strong>{card.title}</strong>
                 </Typography>
-                <Typography variant='body2' align='center'>
+                <Typography variant='body1' align='center'>
                   {card.content}
                 </Typography>
               </CardContent>

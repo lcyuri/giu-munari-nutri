@@ -7,8 +7,15 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import WhatsAppButton from './components/WhatsAppButton';
 import { createTheme, responsiveFontSizes, ThemeProvider } from '@mui/material/styles';
+import { BUTTON_STYLE_SETTINGS } from './constants/genericConstants';
 
-let theme = createTheme();
+let theme = createTheme({
+  components: {
+    MuiButton: BUTTON_STYLE_SETTINGS,
+    MuiIconButton: BUTTON_STYLE_SETTINGS
+  }
+});
+
 theme = responsiveFontSizes(theme);
 
 const App: React.FC = () => {
@@ -68,7 +75,7 @@ const App: React.FC = () => {
         <div id='footer'>
           <Footer />
         </div>
-        <WhatsAppButton isButtonVisible={showWhatsApp} />
+        <WhatsAppButton isButtonVisible={showWhatsApp} variant='floating'/>
       </div>
     </ThemeProvider>
 
