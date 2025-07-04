@@ -24,12 +24,10 @@ const About: React.FC<ContactProps> = ({ isButtonVisible }) => {
         <Typography variant='body1' gutterBottom>
           Se você sente que é hora de <strong>mudar seus hábitos</strong>, eu estou aqui para te ajudar a encontrar o caminho para uma <strong>vida mais saudável</strong>.
         </Typography>
-        <Typography variant='h4'>
-          <strong>Vamos conversar?</strong>
+        <Typography variant='body1' padding='20px 0 10px 0' fontWeight='bold'>
+          VAMOS CONVERSAR?
         </Typography>
-        <Box marginTop='30px'>
-          <WhatsAppButton isButtonVisible={isButtonVisible} variant='full' />
-        </Box>
+        <WhatsAppButton isButtonVisible={isButtonVisible} variant='full' />
       </Grid2>
     </Container>
   );

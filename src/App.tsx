@@ -8,6 +8,7 @@ import Footer from './components/Footer';
 import WhatsAppButton from './components/WhatsAppButton';
 import { createTheme, responsiveFontSizes, ThemeProvider } from '@mui/material/styles';
 import { BUTTON_STYLE_SETTINGS } from './constants/genericConstants';
+import './App.css';
 
 let theme = createTheme({
   components: {
