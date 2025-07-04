@@ -1,6 +1,6 @@
 export const WHATS_APP_LINK = `https://wa.me/+5551996060155?text=${encodeURIComponent('Olá Giu, gostaria de agendar uma consulta!')}`;
 
-export const FEEDBACK_SETTINGS = {
+export const SLIDER_SETTINGS = {
   dots: false,
   infinite: true,
   speed: 500,
@@ -26,7 +26,7 @@ export const FEEDBACK_SETTINGS = {
     {
       breakpoint: 899, // sm and below
       settings: {
-        slidesToShow: 2,
+        slidesToShow: 1,
       }
     },
     {
@@ -34,9 +34,7 @@ export const FEEDBACK_SETTINGS = {
       settings: {
         slidesToShow: 2,
         vertical: true,
-        arrows: false,
-        centerMode: true
-
+        arrows: false
       }
     }
   ],
@@ -53,5 +51,17 @@ export const BUTTON_STYLE_SETTINGS = {
       }
     }
   }
-}
+};
 
+export const TYPOGRAPHY_SETTINGS = {
+  h4: {
+    fontFamily: 'Montserrat, sans-serif',
+    paddingBottom: '10px'
+  },
+  h6: {
+    fontFamily: 'Montserrat, sans-serif'
+  },
+  subtitle1: {
+    fontFamily: 'Open Sans, sans-serif'
+  }
+};

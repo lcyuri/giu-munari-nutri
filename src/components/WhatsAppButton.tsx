@@ -32,15 +32,20 @@ const WhatsAppButton: React.FC<WhatsAppButtonProps> = ({ isButtonVisible, varian
           }
         }}
       >
-        <IconButton href={WHATS_APP_LINK} target='_blank' size='large'>
+        <IconButton
+          href={WHATS_APP_LINK}
+          target='_blank'
+          size='large'
+          sx={{ boxShadow: 5 }}
+        >
           <WhatsAppIcon
             sx={{
               fontSize: {
-                xs: "24px",
-                sm: "30px",
-                md: "34px",
-                lg: "34px",
-                xl: "34px"
+                xs: '24px',
+                sm: '30px',
+                md: '34px',
+                lg: '34px',
+                xl: '34px'
               }
             }}
           />
@@ -58,16 +63,17 @@ const WhatsAppButton: React.FC<WhatsAppButtonProps> = ({ isButtonVisible, varian
       size={isSmallScreen ? 'medium' : 'large'}
       sx={{
         border: 0,
-        borderRadius: '8px',
+        borderRadius: '4px',
+        boxShadow: 5,
         fontWeight: 'bold',
         opacity: isButtonVisible ? 1 : 0,
         animation: isButtonVisible ? 'fadeIn 0.5s ease-in-out' : 'fadeOut 0.5s ease-in-out',
         height: {
-          xs: "40px",
-          sm: "44px",
-          md: "48px",
-          lg: "48px",
-          xl: "48px"
+          xs: '40px',
+          sm: '44px',
+          md: '48px',
+          lg: '48px',
+          xl: '48px'
         }
       }}
     >

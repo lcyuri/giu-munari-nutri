@@ -23,7 +23,7 @@ const Advantage: React.FC = () => {
     {
       title: 'Plano Exclusivo',
       content: 'Respeito suas preferências e metas, sem dietas genéricas. Planos adaptados à sua rotina.',
-      icon: <PlaylistAddCheck sx={{ fontSize: 48, color: '#F6F1E5' }} />
+      icon: <PlaylistAddCheck sx={{ fontSize: 48, color: '#F6F1E5', marginBottom: '-7px' }} />
     },
     {
       title: 'Controle Emocional',
@@ -78,6 +78,7 @@ const Advantage: React.FC = () => {
                 alignContent: 'center',
                 justifyContent: 'center',
                 display: 'flex',
+                boxShadow: 2
               }}
             >
               <CardContent
@@ -96,7 +97,7 @@ const Advantage: React.FC = () => {
                 >
                   <strong>{card.title}</strong>
                 </Typography>
-                <Typography variant='body1' align='center'>
+                <Typography variant='subtitle1' align='center'>
                   {card.content}
                 </Typography>
               </CardContent>

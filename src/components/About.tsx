@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box, Container, Grid2, Typography } from '@mui/material';
-import aboutImage from '../assets/about-image.jpg';
+import aboutImage from '../assets/about.png';
 
 const About: React.FC = () => {
   return (
@@ -9,8 +9,8 @@ const About: React.FC = () => {
       fixed
       sx={{
         padding: {
-          xs: '50px 20px',
-          sm: '50px 0',
+          xs: '50px 20px 40px 20px',
+          sm: '50px 20px 40px 20px',
           md: '50px 0',
           lg: '50px 0',
           xl: '50px 0'
@@ -19,6 +19,13 @@ const About: React.FC = () => {
     >
       <Grid2
         container
+        spacing={{
+          xs: 2,
+          sm: 2,
+          md: 0,
+          lg: 0,
+          xl: 0
+        }}
         flexDirection={{
           xs: 'column',
           sm: 'column',
@@ -91,22 +98,14 @@ const About: React.FC = () => {
             xl: 6
           }}
         >
-          <Box
-            borderRadius='8px'
-            sx={{
-              aspectRatio: '3 / 4',
-              backgroundImage: `url(${aboutImage})`,
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
-              width: {
-                xs: '90vw',
-                sm: '90vw',
-                md: '400px',
-                lg: '450px',
-                xl: '500px'
-              }
-            }}
-          />
+        <Box
+          display='flex'
+          alignItems='center'
+          justifyContent='center'
+          width='100%'
+        >
+          <img src={aboutImage} style={{ width: '100%' }} alt='sobre' />
+        </Box>
         </Grid2>
       </Grid2>
     </Container>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box, Container, Typography } from '@mui/material';
 import { ArrowDownward } from '@mui/icons-material';
-import homeImage from '../assets/home-image.jpg';
+import homeImage from '../assets/home.jpg';
 import WhatsAppButton from './WhatsAppButton';
 
 interface HomeProps {
@@ -26,11 +26,11 @@ const Home: React.FC<HomeProps> = ({ isButtonVisible }) => {
           backgroundPosition: 'center'
         }}
       >
-        <Box paddingBottom="20px">
+        <Box paddingBottom='20px'>
           <WhatsAppButton isButtonVisible={isButtonVisible} variant='full' />
           <Typography
-            variant="body1"
-            margin="20px 0 10px 0"
+            variant='h6'
+            margin='20px 0 10px 0'
             fontWeight='bold'
           >
             CONHEÇA MEU TRABALHO

@@ -1,19 +1,28 @@
 import React from 'react';
 import { Box, Container, Typography } from '@mui/material';
-import logoImage from '../assets/logo-image.jpg';
+import logoImage from '../assets/logo.jpg';
 
 const Footer: React.FC = () => {
   return (
-    <Box sx={{ backgroundColor: '#fff', py: 2, mt: 'auto' }}>
+    <Box sx={{ backgroundColor: '#fff', padding: '10px 0' }}>
       <Container>
-        <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-          <img src={logoImage} style={{ width: '150px' }} />
+        <Box
+          display='flex'
+          alignItems='center'
+          justifyContent='center'
+          marginBottom='10px'
+        >
+          <img src={logoImage} style={{ width: '150px' }} alt='Logo' />
         </Box>
-        <Box sx={{ textAlign: 'center', mt: 2, borderTop: '1px solid #dcdcdc', pt: 1 }}>
-          <Typography variant='body2' color='inherit'>
-            © 2025 Giulia Munari. Todos os direitos reservados.
-          </Typography>
-        </Box>
+        <Typography
+          variant='body2'
+          color='inherit'
+          textAlign='center'
+          borderTop='1px solid #dcdcdc'
+          paddingTop='10px'
+        >
+          © 2025 Giulia Munari. Todos os direitos reservados.
+        </Typography>
       </Container>
     </Box>
   );

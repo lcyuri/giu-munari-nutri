@@ -1,79 +1,92 @@
 import React from 'react';
 import Slider from 'react-slick';
-import { Card, Typography, Box, Grid2, CardMedia } from '@mui/material';
-import { FEEDBACK_SETTINGS } from '../constants/genericConstants';
+import { Card, Typography, Box, Grid2, CardMedia, Container, CardHeader, Avatar } from '@mui/material';
+import { SLIDER_SETTINGS } from '../constants/genericConstants';
 
 const images = [
-  'feedback-image-1.png',
-  'feedback-image-2.png',
-  'feedback-image-3.png',
-  'feedback-image-5.png',
-  'feedback-image-7.png',
-  'feedback-image-12.png',
-  'feedback-image-13.png',
-  'feedback-image-14.png',
-  'feedback-image-15.png',
-  'feedback-image-17.png',
-  'feedback-image-18.png',
+  '1.png',
+  '2.png',
+  '3.png',
+  '5.png',
+  '7.png',
+  '12.png',
+  '13.png',
+  '14.png',
+  '15.png',
+  '17.png',
+  '18.png',
+  '19.png',
+  '20.png',
+  '21.png',
 ].map(name => require(`../assets/feedbacks/${name}`));
 
 const Feedback: React.FC = () => {
   return (
-    <Grid2
-      container
-      direction='column'
-      alignItems='center'
-      justifyContent='center'
-      minHeight='40vh'
+    <Container
+      maxWidth='lg'
+      fixed
       sx={{
         padding: {
           xs: '50px 20px',
-          sm: '60px 0',
-          md: '60px 0',
-          lg: '60px 0',
-          xl: '60px 0'
+          sm: '50px 20px',
+          md: '50px 20px',
+          lg: '50px 20px',
+          xl: '50px 20px'
         }
       }}
     >
-      <Typography variant='h4' align='center' gutterBottom>
-        FEEDBACKS
-      </Typography>
-      <Box
-        sx={{
-          width: {
-            xs: '90%',
-            sm: '80%',
-            md: '80%',
-            lg: '80%',
-            xl: '60%'
-          }
-        }}
+      <Grid2
+        container
+        direction='column'
+        alignItems='center'
+        justifyContent='center'
       >
-        <Slider {...FEEDBACK_SETTINGS}>
-          {images.map((image, index) => (
-            <Card
-              key={index}
-              sx={{
-                maxWidth: {
-                  xs: '100%',
-                  sm: '95%',
-                  md: '95%',
-                  lg: '95%',
-                  xl: '95%'
-                }
-              }}
-            >
-              <CardMedia
-                component='img'
-                image={image}
-                alt={`Feedback ${index + 1}`}
-                sx={{ aspectRatio: '4 / 3' }}
-              />
-            </Card>
-          ))}
-        </Slider>
-      </Box>
-    </Grid2>
+        <Typography variant='h4' align='center' gutterBottom>
+          Veja a <strong>experiência</strong> dos meus clientes
+        </Typography>
+        <Box width='100%'>
+          <Slider {...SLIDER_SETTINGS}>
+            {images.map((image, index) => (
+              <Card
+                key={index}
+                sx={{
+                  boxShadow: 1,
+                  maxWidth: {
+                    xs: '100%',
+                    sm: '95%',
+                    md: '95%',
+                    lg: '95%',
+                    xl: '95%'
+                  }
+                }}
+              >
+                <CardMedia
+                  component='img'
+                  image={image}
+                  alt={`Feedback ${index + 1}`}
+                  sx={{
+                    width: '90%',
+                    height: 'auto',
+                    margin: '0 auto',
+                    padding: '10px',
+                    display: 'block',
+                  }}
+                />
+                <CardHeader
+                  avatar={
+                    <Avatar sx={{ backgroundColor:'#62684e' }}>
+                      JP
+                    </Avatar>
+                  }
+                  title='João Pedro'
+                  subheader='10 de maio de 2025'
+                />
+              </Card>
+            ))}
+          </Slider>
+        </Box>
+      </Grid2>
+    </Container>
   );
 };
 
