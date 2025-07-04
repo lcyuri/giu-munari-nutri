@@ -1,23 +1,29 @@
-import React from 'react';
-import { Box, Typography, Card, CardContent, Container, Grid } from '@mui/material';
+import React, { ReactNode } from 'react';
+import { Typography, Card, CardContent, Container, Grid2 } from '@mui/material';
 import { SupportAgent, Fastfood, PlaylistAddCheck, Mood } from '@mui/icons-material';
 
+interface CardContentProps {
+  title: string;
+  content: string;
+  icon: ReactNode;
+}
+
 const Advantage: React.FC = () => {
-  const cardsContent = [
+  const cardsContent: CardContentProps[] = [
+    {
+      title: 'Dieta Flexível',
+      content: 'Uma dieta totalmente flexível que se ajusta à sua realidade, com substituições personalizadas.',
+      icon: <Fastfood sx={{ fontSize: 40, color: '#F6F1E5' }} />
+    },
     {
       title: 'Suporte Personalizado',
       content: 'Estarei ao seu lado em cada etapa da sua jornada, ajudando a superar dificuldades e alcançando seus sonhos.',
       icon: <SupportAgent sx={{ fontSize: 40, color: '#F6F1E5' }} />
     },
     {
-      title: 'Dieta Flexível e Adaptada',
-      content: 'Uma dieta totalmente flexível que se ajusta à sua realidade, com substituições personalizadas.',
-      icon: <Fastfood sx={{ fontSize: 40, color: '#F6F1E5' }} />
-    },
-    {
-      title: 'Plano Personalizado',
+      title: 'Plano Exclusivo',
       content: 'Respeito suas preferências e metas, sem dietas genéricas. Planos adaptados à sua rotina.',
-      icon: <PlaylistAddCheck sx={{ fontSize: 40, color: '#F6F1E5' }} />
+      icon: <PlaylistAddCheck sx={{ fontSize: 48, color: '#F6F1E5' }} />
     },
     {
       title: 'Controle Emocional',
@@ -28,56 +34,76 @@ const Advantage: React.FC = () => {
 
   return (
     <Container
+      maxWidth='lg'
+      fixed
       sx={{
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        minHeight: '40vh',
-        padding: { xs: '50px 20px', sm: '60px 0', md: '60px 0' }
+        padding: {
+          xs: '50px 20px',
+          sm: '50px 0',
+          md: '50px 0',
+          lg: '50px 0',
+          xl: '50px 0'
+        }
       }}
     >
-      <div>
-        <Typography sx={{ textAlign: 'center', marginBottom: 4, fontSize: { xs: '1.5rem', sm: '2rem', md: '2.5rem' }}}>
-          QUAL É O DIFERENCIAL DA MINHA CONSULTORIA?
-        </Typography>
-        <Grid
-          container
-          spacing={4}
-          sx={{ justifyContent: 'center', flexWrap: 'wrap' }}
-        >
-          {cardsContent.map((card: any, index: number) => (
-            <Grid key={index} item xs={12} sm={6} md={3}>
-              <Card
+      <Typography variant='h4' gutterBottom align='center'>
+        Qual é o <strong>diferencial</strong> da minha consulta?
+      </Typography>
+      <Grid2
+        container
+        spacing={2}
+        flexDirection={{
+          xs: 'column',
+          sm: 'column',
+          md: 'row',
+          lg: 'row',
+          xl: 'row'
+        }}
+      >
+        {cardsContent.map(card => (
+          <Grid2
+            size={{
+              xs: 12,
+              sm: 12,
+              md: 6,
+              lg: 3,
+              xl: 3
+            }}
+          >
+            <Card
+              sx={{
+                backgroundColor: '#62684e',
+                color: '#F6F1E5',
+                height: '100%',
+                alignContent: 'center',
+                justifyContent: 'center',
+                display: 'flex',
+              }}
+            >
+              <CardContent
                 sx={{
-                  backgroundColor: '#62684e',
-                  boxShadow: 20,
-                  borderRadius: '8px',
-                  color: '#F6F1E5',
-                  height: '100%'
+                  display: 'flex',
+                  flexDirection: 'column',
+                  padding: '16px'
                 }}
               >
-                <CardContent
-                  sx={{
-                    display: 'flex',
-                    flexDirection: 'column',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    padding: '16px'
-                  }}
+                <Typography align='center'>{card.icon}</Typography>
+                <Typography
+                  variant='h6'
+                  align='center'
+                  gutterBottom
+                  sx={{ marginTop: '16px' }}
                 >
-                  <Box sx={{ marginBottom: '16px' }}>{card.icon}</Box>
-                  <Typography variant='h6' gutterBottom sx={{ fontWeight: 'bold', fontSize: '1rem', marginBottom: '16px' }}>
-                    {card.title}
-                  </Typography>
-                  <Typography variant='body2' align='center' sx={{ fontSize: '0.875rem' }}>
-                    {card.content}
-                  </Typography>
-                </CardContent>
-              </Card>
-            </Grid>
-          ))}
-        </Grid>
-      </div>
+                  <strong>{card.title}</strong>
+                </Typography>
+                <Typography variant='body2' align='center'>
+                  {card.content}
+                </Typography>
+              </CardContent>
+            </Card>
+          </Grid2>
+        ))}
+      </Grid2>
     </Container>
   );
 };
