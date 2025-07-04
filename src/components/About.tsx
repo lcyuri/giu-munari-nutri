@@ -1,54 +1,114 @@
 import React from 'react';
-import { Box, Container, Typography } from '@mui/material';
+import { Box, Container, Grid2, Typography } from '@mui/material';
 import aboutImage from '../assets/about-image.jpg';
 
 const About: React.FC = () => {
   return (
     <Container
+      maxWidth='lg'
+      fixed
       sx={{
-        display: 'flex',
-        alignItems: 'center',
-        minHeight: '60vh',
-        padding: { xs: '50px 20px', sm: '60px 0', md: '60px 0' },
-        flexDirection: { xs: 'column', sm: 'row' },
-        gap: { xs: 0, sm: '30px', md: '80px' }
+        padding: {
+          xs: '50px 20px',
+          sm: '50px 0',
+          md: '50px 0',
+          lg: '50px 0',
+          xl: '50px 0'
+        }
       }}
     >
-      <Box sx={{ flex: 1, textAlign: 'center' }}>
-        <Typography variant='h3' sx={{ marginBottom: 4, fontSize: { xs: '1.5rem', sm: '2rem', md: '2.5rem' } }}>
-          SOBRE MIM
-        </Typography>
-        <Typography
-          variant='body1'
+      <Grid2
+        container
+        flexDirection={{
+          xs: 'column',
+          sm: 'column',
+          md: 'row',
+          lg: 'row',
+          xl: 'row'
+        }}
+      >
+        <Grid2
+          display='flex'
+          flexDirection='column'
+          justifyContent='center'
+          size={{
+            xs: 12,
+            sm: 12,
+            md: 6,
+            lg: 6,
+            xl: 6
+          }}
           sx={{
-            textAlign: 'justify',
-            lineHeight: { xs: '1.5', sm: '2', md: '2.5' },
-            fontSize: { xs: '0.875rem', sm: '1rem' }
+            textAlign: {
+              xs: 'justify',
+              sm: 'justify',
+              md: 'left',
+              lg: 'left',
+              xl: 'left'
+            }
           }}
         >
-          Eu sou <strong>Giulia Munari</strong>, nutricionista, pós-graduanda em <strong>Nutrição Clínica, Nutrição Esportiva e Exames Laboratoriais</strong>, mas minha primeira formação foi em odontologia.
-          Apesar de concluir o curso, eu não me sentia realizada, e foi na nutrição que encontrei o meu verdadeiro <strong>propósito de vida</strong>.
-          Minha escolha veio da minha própria história: fui uma criança acima do peso, <strong>convivi com a obesidade</strong>,
-          enfrentei o <strong>efeito sanfona, dietas restritivas, transtornos alimentares e distúrbios de imagem</strong>.
-          Minha relação com a saúde e a alimentação mudou completamente quando me apaixonei pelos esportes.
-          Entendi que <strong>é possível ter um estilo de vida saudável sem abrir mão</strong>  do que gostamos de comer ou dos momentos sociais.
-          Hoje, <strong>minha missão é te guiar</strong> até seus objetivos, através de um caminho que una <strong>equilíbrio, saúde e bem-estar</strong>.
-        </Typography>
-      </Box>
-      <Box
-        sx={{
-          width: '100%',
-          maxWidth: 400,
-          minHeight: 530,
-          height: '100%',
-          backgroundImage: `url(${aboutImage})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          borderRadius: '8px',
-          flex: 1,
-          marginTop: { xs: 3, sm: 0 }
-        }}
-      />
+          <Typography
+            variant='h4'
+            gutterBottom
+            sx={{
+              textAlign: {
+                xs: 'center',
+                sm: 'center',
+                md: 'left',
+                lg: 'left',
+                xl: 'left'
+              }
+            }}
+          >
+            Eu sou <strong>Giulia Munari</strong>...
+          </Typography>
+          <Typography variant='subtitle1'>
+            Nutricionista, pós-graduanda em <strong>Nutrição Clínica, Nutrição Esportiva e Exames Laboratoriais</strong>, mas minha primeira formação foi em odontologia.
+            Apesar de concluir o curso, eu não me sentia realizada, e foi na nutrição que encontrei o meu verdadeiro <strong>propósito de vida</strong>.
+            Minha escolha veio da minha própria história: fui uma criança acima do peso, <strong>convivi com a obesidade</strong>,
+            enfrentei o <strong>efeito sanfona, dietas restritivas, transtornos alimentares e distúrbios de imagem</strong>.
+            Minha relação com a saúde e a alimentação mudou completamente quando me apaixonei pelos esportes.
+            Entendi que <strong>é possível ter um estilo de vida saudável sem abrir mão</strong> do que gostamos de comer ou dos momentos sociais.
+            Hoje, <strong>minha missão é te guiar</strong> até seus objetivos, através de um caminho que una <strong>equilíbrio, saúde e bem-estar</strong>.
+          </Typography>
+        </Grid2>
+        <Grid2
+          display='flex'
+          alignItems='center'
+          justifyContent={{
+            xs: 'center',
+            sm: 'center',
+            md: 'right',
+            lg: 'right',
+            xl: 'right'
+          }}
+          size={{
+            xs: 12,
+            sm: 12,
+            md: 6,
+            lg: 6,
+            xl: 6
+          }}
+        >
+          <Box
+            borderRadius='8px'
+            sx={{
+              aspectRatio: '3 / 4',
+              backgroundImage: `url(${aboutImage})`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+              width: {
+                xs: '90vw',
+                sm: '90vw',
+                md: '400px',
+                lg: '450px',
+                xl: '500px'
+              }
+            }}
+          />
+        </Grid2>
+      </Grid2>
     </Container>
   );
 };
