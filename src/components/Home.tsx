@@ -12,7 +12,7 @@ const Home: React.FC<HomeProps> = ({ isButtonVisible }) => {
   return (
     <Container disableGutters maxWidth={false}>
       <Box
-        height='100vh'
+        minHeight='100vh'
         display='flex'
         flexDirection='column'
         justifyContent='end'
