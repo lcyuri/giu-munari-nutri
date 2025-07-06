@@ -1,46 +1,86 @@
-# Getting Started with Create React App
+<p align="center">
+  <img src="https://github.com/lcyuri/giu-munari-nutri/blob/main/public/logo.jpg" width="30%" alt="Giu Munari Nutri Logo">
+</p>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<h1 align="center">giu-munari-nutri</h1>
 
-## Available Scripts
+<p align="center">
+  <img src="https://img.shields.io/github/last-commit/lcyuri/giu-munari-nutri?style=flat&logo=git&logoColor=white&color=0080ff" alt="Last Commit">
+  <img src="https://img.shields.io/github/languages/top/lcyuri/giu-munari-nutri?style=flat&color=0080ff" alt="Top Language">
+  <img src="https://img.shields.io/github/languages/count/lcyuri/giu-munari-nutri?style=flat&color=0080ff" alt="Language Count">
+</p>
 
-In the project directory, you can run:
 
-### `npm start`
+##  Table of Contents
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- [Overview](#overview)
+- [Project Structure](#project-structure)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+  - [Usage](#usage)
+- [Contributing](#contributing)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
-### `npm test`
+## Overview
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+**giu-munari-nutri** is a landing page website developed for a professional nutritionist with over 3 years of experience, focused primarily on sports nutrition. The project uses React + TypeScript (CRA), Material UI for layout, and react-slick for carousels.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+##  Project Structure
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```sh
+└── giu-munari-nutri/
+    ├── README.md
+    ├── package-lock.json
+    ├── package.json
+    ├── public
+    │   ├── index.html
+    │   ├── logo.jpg
+    │   ├── manifest.json
+    │   └── robots.txt
+    ├── src
+    │   ├── App.css
+    │   ├── App.tsx
+    │   ├── assets
+    │   ├── components
+    │   ├── constants
+    │   ├── index.css
+    │   ├── index.tsx
+    │   └── react-app-env.d.ts
+    └── tsconfig.json
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+##  Getting Started
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+###  Prerequisites
+Before getting started, ensure your runtime environment meets the following requirements:
+- Programming Language: TypeScript
+- Package Manager: Npm
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+###  Installation
+Install the project using one the following methods:
+1. Clone the repository:
+```sh
+❯ git clone https://github.com/lcyuri/giu-munari-nutri
+```
+2. Navigate to the project directory:
+```sh
+❯ cd giu-munari-nutri
+```
+3. Install the dependencies:
+```sh
+❯ npm install
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+###  Usage
+1. Run the project using following command:
+```sh
+❯ npm start
+```
+2. It should run the http://localhost:3000 in your default browser
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+##  Contributing
+**🐛 [Report new issues](https://github.com/lcyuri/giu-munari-nutri/issues)**
