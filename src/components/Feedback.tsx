@@ -1,6 +1,6 @@
 import React from 'react';
 import Slider from 'react-slick';
-import { Card, Typography, Box, Grid2, CardMedia, Container, CardHeader, Avatar } from '@mui/material';
+import { Card, Typography, Box, Grid2, CardMedia, Container } from '@mui/material';
 import { SLIDER_SETTINGS } from '../constants/genericConstants';
 
 const images = [
@@ -71,15 +71,6 @@ const Feedback: React.FC = () => {
                     padding: '10px',
                     display: 'block',
                   }}
-                />
-                <CardHeader
-                  avatar={
-                    <Avatar sx={{ backgroundColor:'#62684e' }}>
-                      JP
-                    </Avatar>
-                  }
-                  title='João Pedro'
-                  subheader='10 de maio de 2025'
                 />
               </Card>
             ))}
